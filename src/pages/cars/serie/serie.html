@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>车系</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-list-header class="brand">
+      <span class="brand-name">{{brand.name}}</span>
+      <button ion-button item-end clear color="dark">
+        品牌介绍
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-list-header>
+    <ion-item-group *ngFor="let group of serieData">
+      <ion-item-divider>
+        {{group.name}}
+      </ion-item-divider>
+      <ion-item *ngFor="let item of group.list; let isFirst = first;" [ngClass]="{'first-child': isFirst}" (click)="goCasrs(item)">
+        <ion-thumbnail item-left>
+          <img [src]="item.logo" />
+        </ion-thumbnail>
+        <h2>{{item.name}}</h2>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+
+</ion-content>

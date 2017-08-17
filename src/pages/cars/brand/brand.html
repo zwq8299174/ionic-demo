@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      品牌
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showSearchbar()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content id="page3" class="cars-list">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-round-down"
+      pullingText="下拉刷新"
+      refreshingSpinner="circles"
+      refreshingText="刷新中...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list id="page3-list5">
+    <ion-item color="none" id="page3-list-item7" [hidden]="!carsShow(item)" *ngFor="let item of brandData" (click)="goSerie(item)">
+      <ion-thumbnail item-left>
+        <img [src]="item.logo" />
+      </ion-thumbnail>
+      <h2>{{item.name}}</h2>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())" [ngClass]="{'no-more':noMore}">
+    <ion-infinite-scroll-content loadingSpinner="bubbles"
+      [loadingText]="loadingText"></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

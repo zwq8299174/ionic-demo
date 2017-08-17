@@ -1,0 +1,13 @@
+page-serie {
+  .brand .brand-name{font-size: 1.6rem;}
+  .brand .icon{margin-left: 1em;}
+  ion-item-group .item-block.first-child{border-top: 0.55px solid #c8c7cc;}
+  ion-item-group .item-block:last-child {border-bottom: 0.55px solid #c8c7cc;}
+  ion-item-group .item-ios ion-thumbnail{min-width: 84px;}
+  ion-item-group .item-ios ion-thumbnail ion-img,ion-item-group .item-ios ion-thumbnail img{width: 84px;}
+  .item-md ion-thumbnail{min-width:120px;}
+  .item-md ion-thumbnail ion-img, .item-md ion-thumbnail img{width: 120px;}
+  .list-header-md{margin-bottom: 0;border-bottom:1px solid #dedede;}
+  .item-divider-md{background-color: #f7f7f7;border-bottom:none;}
+
+}

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start [hidden]="backBtn">
+      <button ion-button (click)="cancel()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      登录
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="signup()">
+        注册
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page5">
+  <form id="page5-form2">
+    <ion-list id="page5-list1">
+      <ion-item id="page5-input2">
+        <ion-label>
+          账户
+        </ion-label>
+        <ion-input type="email" placeholder="输入账号"></ion-input>
+      </ion-item>
+      <ion-item id="page5-input3">
+        <ion-label>
+          密码
+        </ion-label>
+        <ion-input type="password" placeholder="输入密码"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="spacer" style="height:40px;" id="page5-spacer2"></div>
+    <button id="page5-button1" ion-button color="positive" block (click)="login()">
+      登录
+    </button>
+    <button id="page5-button3" ion-button color="light" block>
+      忘记密码
+    </button>
+  </form>
+</ion-content>

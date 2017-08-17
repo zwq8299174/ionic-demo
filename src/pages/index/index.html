@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+    <button ion-button icon-only (click)="scanner()">
+      <ion-icon name="qr-scanner"></ion-icon>
+    </button>
+    </ion-buttons>
+    <ion-title>
+      首页
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="getPic()">
+        <ion-icon name="camera"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content id="page2">
+  <ion-slides class="index-banner" loop>
+    <ion-slide>
+      <img src="./assets/img/slide1.jpeg"/>
+    </ion-slide>
+    <ion-slide>
+      <img src="./assets/img/slide2.jpeg"/>
+    </ion-slide>
+    <ion-slide>
+      <img src="./assets/img/slide3.jpeg"/>
+    </ion-slide>
+    <ion-slide>
+      <img src="./assets/img/slide4.jpeg"/>
+    </ion-slide>
+    <ion-slide>
+      <img src="./assets/img/slide5.jpeg"/>
+    </ion-slide>
+  </ion-slides>
+  <p>{{logText}}</p>
+  <img [src]="base64Image" width="100%"/>
+</ion-content>

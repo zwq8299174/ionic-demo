@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      我的
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="settings"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content id="page4" class="user-content" padding>
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="./assets/img/avatar.jpeg">
+      </ion-avatar>
+      <h2>{{userName}}</h2>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary">name</ion-label>
+      <ion-input placeholder="name" [(ngModel)]="userName"></ion-input>
+    </ion-item>
+  </ion-list>
+  <div class="spacer" style="width:320px;height:19px;" id="page4-spacer4"></div>
+  <button id="page4-button6" ion-button outline color="light" full (click)="goTest($event)">
+    我的订单
+    <ion-icon name="arrow-forward"></ion-icon>
+  </button>
+  <button id="page4-button8" ion-button outline color="light" full >
+    我的订单
+    <ion-icon name="arrow-forward"></ion-icon>
+  </button>
+  <button id="page4-button9" ion-button outline color="light" full >
+    我的收藏
+    <ion-icon name="arrow-forward"></ion-icon>
+  </button>
+  <button id="page4-button10" ion-button outline color="light" full >
+    我发表的
+    <ion-icon name="arrow-forward"></ion-icon>
+  </button>
+  <button id="page4-button11" ion-button outline color="light" full >
+    浏览历史
+    <ion-icon name="arrow-forward"></ion-icon>
+  </button>
+  <button ion-button block (click)="logout()">注销</button>
+</ion-content>
