@@ -21,6 +21,9 @@ export class CarPage implements OnInit {
   ngOnInit(): void {
     this.statusBar.styleBlackTranslucent();
   }
+  ionViewWillLeave():void{
+    this.statusBar.styleDefault();
+  }
   ionViewDidLoad() {
     console.log(this.navParams.data.item.id);
     this.getCar({

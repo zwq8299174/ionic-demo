@@ -16,7 +16,7 @@
       <ion-item-divider>
         {{group.name}}
       </ion-item-divider>
-      <ion-item *ngFor="let item of group.list; let isFirst = first;" [ngClass]="{'first-child': isFirst}" (click)="goCasrs(item)">
+      <ion-item *ngFor="let item of group.list; let isFirst = first;" [ngClass]="{'first-child': isFirst}" (tap)="goCasrs(item)">
         <ion-thumbnail item-left>
           <img [src]="item.logo" />
         </ion-thumbnail>

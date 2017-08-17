@@ -4,4 +4,20 @@ page-car{
   .scroll-content{margin-top:0 !important;}
   .header .toolbar-background{background-color:transparent;}
   .header .toolbar-background{border:none;}
+  .car-img{position: relative; }
+  .bar-button-default-ios, .bar-button-default.bar-button-ios-default, .bar-button-clear-ios-default{color:#fff;}
+  .car-img .shadow{margin:0;padding:0; height:70px;background: linear-gradient(rgba(100, 100, 100, 0.8), rgba(100, 100, 100, 0));position: absolute;width: 100%;}
+  .car-operation{display: flex;align-self:center;justify-content: center;}
+  .car-operation a{flex:1;display: flex;align-self:center;justify-content: center;text-align: center;
+
+    font-size: 2rem;
+    color: #8c8c8c;
+    padding: 0 2px;}
+  .car-operation a .icon,.car-operation a .tab-button-text{align-self: center;
+    min-width: 26px;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;display:block;overflow:hidden;}
+  .car-operation a .icon{margin-top: 4px;margin-bottom: 1px;min-width: 35px;height: 30px;font-size: 30px;color: #8c8c8c;}
+  .car-operation a .tab-button-text{margin-top: 0;margin-bottom: 1px;min-height: 11px; }
 }

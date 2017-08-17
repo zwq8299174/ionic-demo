@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-buttons start [hidden]="backBtn">
-      <button ion-button (click)="cancel()">
+      <button ion-button (tap)="cancel()">
         <ion-icon name="arrow-back"></ion-icon>
       </button>
     </ion-buttons>
@@ -9,7 +9,7 @@
       登录
     </ion-title>
     <ion-buttons end>
-      <button ion-button (click)="signup()">
+      <button ion-button (tap)="signup()">
         注册
       </button>
     </ion-buttons>
@@ -32,7 +32,7 @@
       </ion-item>
     </ion-list>
     <div class="spacer" style="height:40px;" id="page5-spacer2"></div>
-    <button id="page5-button1" ion-button color="positive" block (click)="login()">
+    <button id="page5-button1" ion-button color="positive" block (tap)="login()">
       登录
     </button>
     <button id="page5-button3" ion-button color="light" block>
