@@ -9,6 +9,8 @@ import { appApi } from '../../../app/service/appApi';
   templateUrl: 'car.html'
 })
 export class CarPage implements OnInit {
+  @ViewChild('imgWrapper') imgWrapper: ElementRef;
+  @ViewChild('carImg') carImg: ElementRef;
   @ViewChild('yearWrapper') wrapper: ElementRef;
   @ViewChild(Content) content: Content;
   @ViewChild(Header) header: Header;
@@ -20,6 +22,7 @@ export class CarPage implements OnInit {
   };
   headerDeep: boolean = false;
   activeIndex: number = 0;
+  imgHeight: number;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -31,29 +34,26 @@ export class CarPage implements OnInit {
     private loadingCtrl: LoadingController
   ) { }
   ngOnInit(): void {
+    this.setTop();
     this.statusBar.styleBlackTranslucent();
     this.getCar({
       parentid: this.navParams.data.item.id
     });
-    console.log(this.header);
-    this.docScroll();
+    console.log(this.content);
   }
   ionViewWillLeave(): void {
     this.statusBar.styleDefault();
   }
-  docScroll(): void {
-    console.log(this.content);
-    this.content.ionScrollEnd.subscribe((e: any) => {
-      this.ngZone.run(() => {
-        if (e.scrollTop > this.header._elementRef.nativeElement.offsetHeight) {
-          this.headerDeep = true;
-          this.statusBar.styleDefault();
-        } else {
-          this.headerDeep = false;
-          this.statusBar.styleBlackTranslucent();
-        }
-      });
-    })
+  docScroll(e): void {
+    this.ngZone.run(() => {
+      if (e.scrollTop > this.header._elementRef.nativeElement.offsetHeight) {
+        this.headerDeep = true;
+        this.statusBar.styleDefault();
+      } else {
+        this.headerDeep = false;
+        this.statusBar.styleBlackTranslucent();
+      }
+    });
   }
   getCar(param: any): void {
     let loading = this.loadingCtrl.create({
@@ -71,6 +71,10 @@ export class CarPage implements OnInit {
         loading.dismiss();
       }, 500);
     });
+  }
+  setTop(): void {
+    this.imgHeight = this.header._elementRef.nativeElement.offsetHeight;
+    this.renderer2.setStyle(this.content._scrollContent.nativeElement, 'padding-top', this.imgHeight + 'px');
   }
   setWidth(): void {
     let child: any = this.wrapper.nativeElement.children;

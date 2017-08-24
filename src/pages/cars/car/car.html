@@ -12,12 +12,12 @@
       </button>
     </ion-buttons>
   </ion-navbar>
-</ion-header>
-<ion-content>
   <section class="car-img">
-    <p class="shadow"></p>
-    <img src="./assets/img/slide1.jpeg" width="100%" />
+      <p class="shadow"></p>
+      <img [src]="carData?.logo" #carImg>
   </section>
+</ion-header>
+<ion-content #content (ionScrollEnd)="docScroll($event)">
   <div class="car-operation">
     <a class="has-title has-icon disable-hover">
       <ion-icon class="iconfont">&#xe6d8;</ion-icon>

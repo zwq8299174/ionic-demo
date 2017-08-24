@@ -71,6 +71,7 @@
 	transition: all 0.5s ease;
 }
 
+body{max-width: 750px;margin:0 auto;}
 
 ion-app.ios {
 	font-family: "webfont", -apple-system, "Helvetica Neue", "Roboto", sans-serif;

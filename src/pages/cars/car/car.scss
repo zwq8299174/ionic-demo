@@ -1,19 +1,19 @@
 page-car{
   $transition05: all 0.5s ease;
   $transition02: all 0.2s ease;
-  .slide-wrapper{height:638px;}
-  .slide{height: auto;}
 
-
+  .content {z-index: 11;}
   .header .iconfont{font-size: 2.4rem;padding: 0 0.1rem}
   .header .icon-button button{margin-right:1rem}
   .content>.scroll-content{margin-top:0 !important; background-color: #f0eff5;}
+  .header .toolbar{position: absolute;z-index: 9;}
   .header .toolbar.opacity .toolbar-background{ border-width: 0;background-color:transparent;transition: background-color 0.2s ease;}
   .header.deep .toolbar.opacity .toolbar-background{background-color:#fff; border-width:0 0 0.55px;}
   .deep .bar-button-default-ios,.deep .bar-button-default.bar-button-ios-default, .deep .bar-button-clear-ios-default{color:#424242;}
-  .car-img{position: relative;clear: both;display: inline-block;}
-  .car-img img{float: left;}
+
   .bar-button-default-ios, .bar-button-default.bar-button-ios-default, .bar-button-clear-ios-default{color:#fff;transition: $transition05;}
+  .car-img{width: 100%;display: inline-block;}
+  .car-img img{width: 100%;}
   .car-img .shadow{margin:0;padding:0; height:70px;position: absolute;width: 100%;background: linear-gradient(rgba(100, 100, 100, 0.8), rgba(100, 100, 100, 0));}
   .car-operation{display: flex;align-self:center;justify-content: center;padding: 1rem 0;background-color: #fff;}
   .car-operation a{flex:1;display: flex;align-self:center;justify-content: center;text-align: center;
