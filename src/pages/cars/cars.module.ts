@@ -1,13 +1,18 @@
 import { NgModule } from '@angular/core';
-import { BrandModule } from './brand/brand.module';
-import { SerieModule } from './serie/serie.module';
-import { CarModule } from './car/car.module';
+import { IonicModule } from 'ionic-angular';
+import { BrandPage } from './brand/brand';
+import { SeriePage } from './serie/serie';
+import { CarPage } from './car/car';
 
 @NgModule({
+  declarations: [
+    BrandPage,
+    SeriePage,
+    CarPage
+  ],
   imports: [
-    BrandModule,
-    SerieModule,
-    CarModule
-  ]
+    IonicModule
+  ],
+  entryComponents:[BrandPage,SeriePage,CarPage]
 })
 export class CarsModule {}

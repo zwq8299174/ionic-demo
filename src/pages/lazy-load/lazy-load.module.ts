@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { BrandPage } from './brand';
+import { LazyLoadPage } from './lazy-load';
 
 @NgModule({
   declarations: [
-    BrandPage,
+    LazyLoadPage,
   ],
   imports: [
-    IonicPageModule.forChild(BrandPage),
+    IonicPageModule.forChild(LazyLoadPage),
   ],
 })
-export class BrandModule {}
+export class LazyLoadPageModule {}

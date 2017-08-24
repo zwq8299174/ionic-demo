@@ -1,5 +1,5 @@
-<ion-header>
-  <ion-navbar>
+<ion-header [ngClass]="{'deep': headerDeep}">
+  <ion-navbar class="opacity">
     <ion-buttons class="icon-button" end>
       <button ion-button icon-only (tap)="collect()">
         <ion-icon name="star-outline"></ion-icon>
@@ -16,7 +16,7 @@
 <ion-content>
   <section class="car-img">
     <p class="shadow"></p>
-    <img src="./assets/img/slide1.jpeg" width="100%"/>
+    <img src="./assets/img/slide1.jpeg" width="100%" />
   </section>
   <div class="car-operation">
     <a class="has-title has-icon disable-hover">
@@ -39,5 +39,27 @@
       <ion-icon class="iconfont">&#xe62b;</ion-icon>
       <span class="tab-button-text">经销商</span>
     </a>
+  </div>
+  <div class="car-list">
+  <ion-scroll scrollX="true" class="year-container">
+    <div class="year-wrapper" #yearWrapper>
+      <a *ngFor="let item of years;let $index = index;" [ngClass]="{'active': $index==activeIndex}" (tap)="yearClick(item,$index)">{{getYear(item)}}
+        <i></i>
+      </a>
+    </div>
+  </ion-scroll>
+  <ion-list class="list-wrapper">
+    <ion-item *ngFor="let item of carData?.list; let isFirst = first;" [ngClass]="{'first-child': isFirst}" (tap)="goDetail(item)" [hidden]="carShow(item)">
+      <div class="item-content">
+        <h2>{{item.name}}</h2>
+        <p class="price"><span class="tag">厂商指导价：</span><span class="val">{{item.price}}</span></p>
+        <ion-icon name="arrow-forward" item-end></ion-icon>
+      </div>
+      <ion-buttons class="button-group">
+        <button ion-button outline block class="pk iconfont" (tap)="$event.stopPropagation();addPk()">&#xe661;</button>
+        <button ion-button outline block class="inquiry" (tap)="$event.stopPropagation();inquiry()">询底价</button>
+      </ion-buttons>
+    </ion-item>
+    </ion-list>
   </div>
 </ion-content>

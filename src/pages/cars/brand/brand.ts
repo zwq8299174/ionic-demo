@@ -1,12 +1,12 @@
 import { Component, OnInit} from '@angular/core';
-import { App, IonicPage, NavController,LoadingController } from 'ionic-angular';
-
+import { App,NavController,LoadingController } from 'ionic-angular';
 
 import { appApi } from '../../../app/service/appApi';
 
 import { Keyboard } from '@ionic-native/keyboard';
 
-@IonicPage()
+import { SeriePage } from '../serie/serie';
+
 @Component({
   selector: 'page-brand',
   templateUrl: 'brand.html'
@@ -92,7 +92,7 @@ export class BrandPage implements OnInit {
     }
   }
   goSerie(item):void{
-    this.app.getRootNav().push('SeriePage',{
+    this.app.getRootNav().push(SeriePage,{
       item: item
     });
   }

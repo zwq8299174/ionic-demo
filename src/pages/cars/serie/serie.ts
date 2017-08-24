@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { App, IonicPage, NavController, NavParams } from 'ionic-angular';
+import { App,NavController, NavParams,LoadingController } from 'ionic-angular';
 
 import { appApi } from '../../../app/service/appApi';
 
-@IonicPage()
+import {CarPage} from '../car/car';
+
 @Component({
   selector: 'page-serie',
   templateUrl: 'serie.html',
@@ -14,8 +15,9 @@ export class SeriePage implements OnInit {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
+    private app: App,
     private api: appApi,
-    private app: App
+    private loadingCtrl: LoadingController
   ) {}
   ngOnInit(): void {
     this.brand = this.navParams.data.item;
@@ -24,13 +26,20 @@ export class SeriePage implements OnInit {
     });
   }
   getSerie(param:any):void{
+    let loading = this.loadingCtrl.create({
+      content: '加载中...'
+    });
+    loading.present();
     this.api.getSerie(param).subscribe(data => {
       this.serieData = data.result;
       console.log(data);
+      setTimeout(() => {
+        loading.dismiss();
+      }, 500);
     });
   }
   goCasrs(item):void{
-    this.app.getRootNav().push('CarPage',{
+    this.app.getRootNav().push(CarPage,{
       item: item
     });
   }

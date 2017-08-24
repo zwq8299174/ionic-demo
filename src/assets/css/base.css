@@ -1,17 +1,22 @@
 /*body{width: 750px;min-height: 100%;} */
 @font-face {
-  font-family: 'iconfont';  /* project id 81788 */
-  src: url('../fonts/iconfont.eot?t=1502951702735'); /* IE9*/
-  src: url('../fonts/iconfont.eot?t=1502951702735#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('../fonts/iconfont.woff?t=1502951702735') format('woff'), /* chrome, firefox */
-  url('../fonts/iconfont.ttf?t=1502951702735') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('../fonts/iconfont.svg?t=1502951702735#iconfont') format('svg'); /* iOS 4.1- */
+	font-family: 'iconfont';
+	/* project id 81788 */
+	src: url('../fonts/iconfont.eot?t=1502951702735');
+	/* IE9*/
+	src:url('../fonts/iconfont.eot?t=1502951702735#iefix') format('embedded-opentype'),
+	/* IE6-IE8 */
+	url('../fonts/iconfont.woff?t=1502951702735') format('woff'),
+	/* chrome, firefox */
+	url('../fonts/iconfont.ttf?t=1502951702735') format('truetype'),
+	/* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+	url( '../fonts/iconfont.svg?t=1502951702735#iconfont') format('svg');
+	/* iOS 4.1- */
 }
 
-
-.iconfont{
-	font-family:'iconfont' !important;
-	font-size:16px;
+.iconfont {
+	font-family: 'iconfont' !important;
+	font-size: 16px;
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
@@ -21,4 +26,56 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-text-stroke-width: 0.2px;
+}
+/*--------------web-font-----------------*/
+@font-face {
+	font-family: "webfont";
+	src: url('../fonts/webfont.eot');
+	/* IE9*/
+	src:url('../fonts/webfont.eot?#iefix') format('embedded-opentype'),
+	/* IE6-IE8 */
+	url('../fonts/webfont.woff') format('woff'),
+	/* chrome、firefox */
+	url('../fonts/webfont.ttf') format('truetype'),
+	/* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+	url( '../fonts/webfont.svg#webfont') format('svg');
+	/* iOS 4.1- */
+}
+
+.web-font {
+	font-family: "webfont" !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-stroke-width: 0.2px;
+}
+
+.transition-02 {
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+.transition-05 {
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+
+ion-app.ios {
+	font-family: "webfont", -apple-system, "Helvetica Neue", "Roboto", sans-serif;
+}
+
+ion-app.md {
+	font-family: "webfont", "Roboto", "Helvetica Neue", sans-serif;
 }
