@@ -11,19 +11,20 @@ import { HomePage } from '../pages/home/home';
 
 
 @Component({
-  templateUrl: 'app.html'
+	templateUrl: 'app.html'
 })
 export class MyApp {
-  @ViewChild(Nav) navCtrl: Nav;
-    rootPage:any = HomePage;
-    
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
-    platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
-      splashScreen.hide();
-    });
-  }
+	@ViewChild(Nav) navCtrl: Nav;
+	rootPage:any = HomePage;
+	// rootPage: any = AlphaScrollPage;
+
+	constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+		platform.ready().then(() => {
+			// Okay, so the platform is ready and our plugins are available.
+			// Here you can do any higher level native things you might need.
+			statusBar.styleDefault();
+			splashScreen.hide();
+		});
+	}
 
 }

@@ -7,6 +7,7 @@ import { HttpModule } from "@angular/http";
 //Ionic & Ionic Native
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
@@ -14,6 +15,7 @@ import { Camera } from '@ionic-native/camera';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { Keyboard } from '@ionic-native/keyboard';
 import { Contacts } from '@ionic-native/contacts';
+import { Vibration } from '@ionic-native/vibration';
 
 
 //Custom service
@@ -31,11 +33,16 @@ import { DiscoverPage } from '../pages/discover/discover';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
+import { AlphaScrollPage } from '../pages/alpha-scroll/alpha-scroll';
 
-//Components
+//Modules
 import { ComponentsModule } from '../components/components.module';
-import { AppServeiceProvider } from '../providers/app-serveice/app-serveice';
+import { AppServeiceProviderModule } from '../providers/app-serveice';
+import { AlphaScrollModule } from '../modules/alpha-scroll.module';
+import { PipesModule } from '../pipes/pipes.module';
 
+//providers
+import { ListData } from '../providers/list-data';
 
 @NgModule({
   declarations: [
@@ -44,13 +51,17 @@ import { AppServeiceProvider } from '../providers/app-serveice/app-serveice';
     DiscoverPage,
     HomePage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    AlphaScrollPage
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     IonicStorageModule.forRoot(),
+    AlphaScrollModule.forRoot(),
+    PipesModule.forRoot(),
+    AppServeiceProviderModule,
     IonicModule.forRoot(MyApp,{
       backButtonText: '返回'
     }),
@@ -65,7 +76,8 @@ import { AppServeiceProvider } from '../providers/app-serveice/app-serveice';
     DiscoverPage,
     HomePage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    AlphaScrollPage
   ],
   providers: [
     StatusBar,
@@ -74,11 +86,12 @@ import { AppServeiceProvider } from '../providers/app-serveice/app-serveice';
     Camera,
     BarcodeScanner,
     Keyboard,
+    Vibration,
     appHttp,
     appApi,
+    ListData,
     { provide: 'Window',  useValue: window },
-    { provide: ErrorHandler, useClass: IonicErrorHandler },
-    AppServeiceProvider
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
 export class AppModule { }
